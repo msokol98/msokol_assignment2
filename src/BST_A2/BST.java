@@ -14,7 +14,39 @@ public class BST implements BST_Interface {
 	@Override
 	public boolean insert(String s) {
 		// TODO Auto-generated method stub
-		return false;
+		BST_Node newNode = new BST_Node(s);
+		
+		if(root == null) {
+			root = newNode;
+			return goodInsert();
+		}
+		
+		BST_Node current = root;
+		BST_Node parent;
+		
+		while(true) {
+			parent = current;
+			
+			if(s.compareTo(current.data) < 0) {
+				current = current.left;
+				if(current == null) {
+					parent.left = newNode;
+					break;
+				}
+			}
+			
+			else if(s.compareTo(current.data) > 0) {
+				current = current.right;
+				if(current == null) {
+					parent.right = newNode;
+					break;
+				}
+			}
+			
+		}
+		
+		return goodInsert();
+		
 	}
 	
 	@Override
@@ -26,31 +58,47 @@ public class BST implements BST_Interface {
 	@Override
 	public String findMin() {
 		// TODO Auto-generated method stub
-		return null;
+		BST_Node currentNode = root;
+		while(currentNode.left != null) currentNode = currentNode.left;
+		return currentNode.data;
+		
 	}
 	
 	@Override
 	public String findMax() {
 		// TODO Auto-generated method stub
-		return null;
+		BST_Node currentNode = root;
+		while(currentNode.right != null) currentNode = currentNode.right;
+		return currentNode.data;
 	}
 	
 	@Override
 	public boolean empty() {
 		// TODO Auto-generated method stub
-		return false;
+		return size == 0;
 	}
 	
 	@Override
 	public boolean contains(String s) {
 		// TODO Auto-generated method stub
+		return contains(s, root);
+	}
+	
+	private boolean contains(String s, BST_Node node) {
+		
+		if(node == null) return false;
+		if(node.data.contentEquals(s)) return true;
+		
+		contains(s, node.left);
+		contains(s, node.right);
+		
 		return false;
 	}
 	
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 	
 	@Override
@@ -58,11 +106,15 @@ public class BST implements BST_Interface {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-  //--------------------------------------------------
-  //
-  // of course, fill in the methods implementations
-  // for the interface
-  //
-  //--------------------------------------------------
+	
+	private boolean goodInsert() {
+		size++;
+		return true;
+	}
+	
+	private boolean goodDelete() {
+		size--;
+		return true;
+	}
 
 }

@@ -30,7 +30,7 @@ package BST_A2;
             if the element being looked for is not in the tree, return false and
               make no change to the tree state
   contains:
-    in: a string (the element to be seaarched for)
+    in: a string (the element to be searched for)
     return: boolean, return true if the string being looked for is in the tree;
             return false otherwise
             this means return false if tree size is 0

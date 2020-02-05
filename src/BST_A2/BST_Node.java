@@ -23,6 +23,6 @@ public class BST_Node {
   
   public String toString(){
     return "Data: "+this.data+", Left: "+((this.left!=null)?left.data:"null")
-            +",Right: "+((this.right!=null)?right.data:"null");
+            +", Right: "+((this.right!=null)?right.data:"null");
   }
 }

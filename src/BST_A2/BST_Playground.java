@@ -14,14 +14,14 @@ public class BST_Playground {
   
   public static void main(String[]args){
 
-   // you should test your BST implementation in here
-   // it is up to you to test it thoroughly and make sure
-   // the methods behave as requested above in the interface
-  
-   // do not simple depend on the oracle test we will give
-   // use the oracle tests as a way of checking AFTER you have done
-   // your own testing
-
+	   BST tree = new BST();
+	   tree.insert("hello");
+	   tree.insert("wow");
+	   tree.insert("apple");
+	   
+	   System.out.println(tree.contains("apple"));
+	 
+	  
    // one thing you might find useful for debugging is a print tree method
    // feel free to use the printLevelOrder method to verify your trees manually
    // or write one you like better
