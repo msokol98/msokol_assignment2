@@ -104,7 +104,18 @@ public class BST implements BST_Interface {
 	@Override
 	public int height() {
 		// TODO Auto-generated method stub
-		return 0;
+		return height(root);
+	}
+	
+	private int height(BST_Node node) {
+		
+		if(node == null) return -1;
+		
+		int leftHeight = height(node.left);
+		int rightHeight = height(node.right);
+		
+		return Math.max(leftHeight, rightHeight)+1;
+		
 	}
 	
 	private boolean goodInsert() {

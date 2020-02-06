@@ -15,11 +15,16 @@ public class BST_Playground {
   public static void main(String[]args){
 
 	   BST tree = new BST();
-	   tree.insert("hello");
-	   tree.insert("wow");
-	   tree.insert("apple");
 	   
-	   System.out.println(tree.contains("apple"));
+	   tree.insert("banana");
+	   tree.insert("kiwi");
+	   tree.insert("apple");
+	   tree.insert("grape");
+	   tree.insert("mango");
+	   tree.insert("grapefruit");
+	   tree.insert("zeebra");
+	   
+	   System.out.println(tree.findMax());
 	 
 	  
    // one thing you might find useful for debugging is a print tree method
@@ -37,6 +42,7 @@ public class BST_Playground {
     int h=tree.height();
     for(int i=0;i<=h;i++){
       printGivenLevel(tree.getRoot(), i);
+      System.out.println();
     }
     
   }
