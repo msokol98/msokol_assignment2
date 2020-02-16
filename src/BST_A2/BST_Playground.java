@@ -24,8 +24,13 @@ public class BST_Playground {
 	   tree.insert("grapefruit");
 	   tree.insert("zeebra");
 	   
-	   System.out.println(tree.findMax());
-	 
+	   System.out.println(tree.size());
+	   
+	   tree.remove("zeebra");
+	   
+	   System.out.println(tree.size());
+	   
+	
 	  
    // one thing you might find useful for debugging is a print tree method
    // feel free to use the printLevelOrder method to verify your trees manually
