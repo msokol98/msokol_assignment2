@@ -183,12 +183,17 @@ public class BST implements BST_Interface {
 	private boolean contains(String s, BST_Node node) {
 		
 		if(node == null) return false;
-		if(node.data.contentEquals(s)) return true;
 		
-		contains(s, node.left);
-		contains(s, node.right);
+		int comResult = node.data.compareTo(s);
 		
-		return false;
+		if(comResult == 0) 
+			return true;
+		else if(comResult > 0)
+			return contains(s, node.left);
+		else 
+			return contains(s, node.right);
+			
+		
 	}
 	
 	@Override

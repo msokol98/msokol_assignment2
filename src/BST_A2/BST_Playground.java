@@ -16,19 +16,13 @@ public class BST_Playground {
 
 	   BST tree = new BST();
 	   
-	   tree.insert("banana");
-	   tree.insert("kiwi");
-	   tree.insert("apple");
-	   tree.insert("grape");
-	   tree.insert("mango");
-	   tree.insert("grapefruit");
-	   tree.insert("zeebra");
-	   
-	   System.out.println(tree.size());
-	   
-	   tree.remove("zeebra");
-	   
-	   System.out.println(tree.size());
+	   tree.insert("B");
+	   tree.insert("A");
+	   tree.insert("D");
+	   tree.insert("C");
+	   tree.insert("E");
+	   System.out.println(tree.contains("Z"));
+
 	   
 	
 	  
